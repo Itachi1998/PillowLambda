@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LAYER_NAME="pillow-layer-python312-x86-64"
-ZIPFILE="${LAYER_NAME}.zip"
+ZIP_FILE="${LAYER_NAME}.zip"
 echo "--- Starting Lambda Layer Build Process ---"
 echo "Layer name: $LAYER_NAME"
 echo "Output ZIP: $ZIP_FILE"
