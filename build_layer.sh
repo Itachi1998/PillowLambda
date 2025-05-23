@@ -14,7 +14,7 @@ if [ $? -ne 0 ]; then
 fi
 echo "Docker image built."
 echo "Creating temporary Docker container..."
-CONTAINER_ID=$(docker create "$LAYER_NAME-builder")
+CONTAINER_ID=$(docker create "$LAYER_NAME-builder" /bin/true)
 
 if [ -z "$CONTAINER_ID" ]; then
   echo "ERROR: Failed to create Docker container. Exiting..."
