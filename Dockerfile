@@ -6,6 +6,7 @@ RUN pip install --target /build/python Pillow \
     --platform manylinux2014_x86_64 \
     --only-binary=:all: \
     --no-cache-dir
+FROM scratch
 
 WORKDIR /python
 
