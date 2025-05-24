@@ -10,7 +10,7 @@
 ### The dockerfile makes sure those libraries are present in the local os for packaging the Lambda layer, this way we don't get ABI compatibility issues.
 
 
-## Installation:
+## Bash Script Installation:
 
 ### This installation will be done through the AWS cloudshell. You may use any linux machine of your choice to follow the commands. For Windows/Mac commands may vary.
 ### To create the lambda layer zipfile, download the Dockerfile and build_layer.sh files.
@@ -29,5 +29,28 @@
 ### Here our layer should pop up when we pick custom layers, if not, you can specify the ARN of the lambda layer we created and use the ARN option instead.
 ### Next test your code to make sure everythings working.
 ### Vuala, now you can use python's pillow module in your AWS Lambda Function!
+
+
+## DIY Installation:
+
+This installation will be done in the same AWS cloud shell environment as the previous ones. Commands may vary on other systems.
+
+### To package the library yourself, the only file you need to download is the Dockerfile. ( you can also download the lambda code to test the lambda function or copy paste it)
+
+### Since the AWS cloudshell environment already has docker, we're covered. **Make sure docker is installed on your system.**
+### Build the docker image: `docker build -t pillow-layer-builder .` (use the . to specify your current working directory, alternatively you can enter the path to the directory your dockerfile is located)
+### Create temp container and save it to a variable: `CONTAINER_ID=$(docker create pillow-layer-builder /bin/true`)
+### Use the /bin/true to avoid errors when building the dockerfile since we don't have an entry point. You can also just copy the id instead of creating a variable.
+### Copy layer contents to local machine: `docker cp "$CONTAINER_ID":python ./python 
+### Now that we've imported the dependencies from the docker image, we can remove the container: `docker rm "$CONTAINER_ID" > /dev/null`
+### Now all that's left is creating the zip package
+### zip -r pillow-layer.zip python
+
+## Final DIY steps:
+
+### Cleanup python directory: `rm -rf python"
+### Cleanup docker containers: `docker RMI pillow-layer-builder > /dev/null`
+
+
 
 
