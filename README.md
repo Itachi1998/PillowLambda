@@ -1,6 +1,6 @@
 # Lambda Pillow layer
 
-### An AWS Lambda layer for python's Pillow library.
+### An AWS Lambda layer builder for python's Pillow library.
 
 
 ## Why:
