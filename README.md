@@ -41,8 +41,8 @@ This installation will be done in the same AWS cloud shell environment as the pr
 ### Build the docker image: `docker build -t pillow-layer-builder .` (use the . to specify your current working directory, alternatively you can enter the path to the directory your dockerfile is located)
 ### Create temp container and save it to a variable: `CONTAINER_ID=$(docker create pillow-layer-builder /bin/true`)
 ### Use the /bin/true to avoid errors when building the dockerfile since we don't have an entry point. You can also just copy the id instead of creating a variable.
-### Copy layer contents to local machine: `docker cp "$CONTAINER_ID":python ./python 
-### Now that we've imported the dependencies from the docker image, we can remove the container: `docker rm "$CONTAINER_ID" > /dev/null`
+### Copy layer contents to local machine: `docker cp $CONTAINER_ID:/python ./python 
+### Now that we've imported the dependencies from the docker image, we can remove the container: `docker rm $CONTAINER_ID > /dev/null`
 ### Now all that's left is creating the zip package
 ### zip -r pillow-layer.zip python
 
