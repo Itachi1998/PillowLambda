@@ -7,7 +7,7 @@
 
 ### I created this Pillow layer to be able to concurrently process python Pillow processes in the cloud.
 ### Why the docker image? The Pillow library requires specific C extensions (.so files like _imaging.cpython-313-x86-64-linux-gnu.so). 
-### The dockerfile makes sure those libraries are present in the local os for packaging the Lambda layer, this way we don't get ABI compatibility issues.
+### We use docker to pre-compile the binaries, then copy the dependencies to a /python directory, which we later zip up for lambda layer packaging.
 
 
 ## Bash Script Installation:
