@@ -12,7 +12,7 @@
 
 ## Installation:
 
-### (this installation will be done through the AWS cloudshell. You may use any linux machine of your choice to follow the commands. For Windows/Mac commands may vary.
+### This installation will be done through the AWS cloudshell. You may use any linux machine of your choice to follow the commands. For Windows/Mac commands may vary.
 ### To create the lambda layer zipfile, download the Dockerfile and build_layer.sh files.
 ### In your AWS Cloudshell terminal, create a new directory: `mkdir lambda` (or create a working directory on your local machine)
 ### Upload the Dockerfile and build_layer.sh files to your cloudshell environment.
