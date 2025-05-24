@@ -49,7 +49,7 @@ This installation will be done in the same AWS cloud shell environment as the pr
 ## Final DIY steps:
 
 ### Cleanup python directory: `rm -rf python`
-### Cleanup docker containers: `docker RMI pillow-layer-builder > /dev/null`
+### Cleanup docker containers: `docker rmi pillow-layer-builder > /dev/null`
 
 
 
