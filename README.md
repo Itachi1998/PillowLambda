@@ -19,7 +19,7 @@
 ### Move these files to the lambda directory: `mv Dockerfile lambda` and `mv build_layer.sh lambda`
 ### Make the build_layer.sh executable with: `chmod +x build_layer.sh`
 ### Moment of truth, run: `./build_layer.sh`
-### If everything went correctly, you should see a new zipfile created called: `pillow-layer-python312-x86-64.zip`
+### If everything went correctly, you should see a new zipfile created called: `pillow-layer-python313-x86-64.zip`
 ### Click on the actions dropdown menu in the AWS cloudshell, and download the zipfile.
 ### Go to the AWS Lambda Layer page (can be found on the left side menu of the Lambda page)
 ### Click on create layer
